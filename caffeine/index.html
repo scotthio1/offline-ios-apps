@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Caffeine">
+<meta name="theme-color" content="#0a0c10">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="data:image/png;base64,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">
+<title>Caffeine Calculator</title>
+<link rel="manifest" href="manifest.webmanifest">
+<style>html body .wrap { padding-top: calc(env(safe-area-inset-top, 0px) + 30px); }</style>
+
+<style>
+:root {
+  color-scheme: dark;
+  --ground: #0a0c10; --panel: #12161c; --panel2: #181d25; --line: #262e39;
+  --text: #d6dce4; --muted: #8b96a5; --faint: #5d6877;
+  --amber: #f2b24c; --cyan: #7cc7d9; --violet: #a99ae0; --ok: #7fd49a; --bad: #f07a6a;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { background: var(--ground); }
+body { margin: 0; color: var(--text); font: 15px/1.45 var(--sans); -webkit-text-size-adjust: 100%; }
+.wrap {
+  max-width: 1320px; margin: 0 auto;
+  padding: calc(env(safe-area-inset-top, 0px) + 12px) calc(env(safe-area-inset-right, 0px) + 16px)
+           calc(env(safe-area-inset-bottom, 0px) + 40px) calc(env(safe-area-inset-left, 0px) + 16px);
+  display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "head" "kpis" "chart" "log" "doses" "forecast" "profile" "foot";
+}
+.col { display: contents; }
+@media (min-width: 1000px) {
+  .wrap { grid-template-columns: 370px minmax(0, 1fr); grid-template-areas: "head head" "left right" "foot foot"; align-items: start; }
+  .col { display: grid; gap: 14px; align-content: start; min-width: 0; grid-template-columns: minmax(0, 1fr); }
+  .col.left { grid-area: left; } .col.right { grid-area: right; }
+  .wrap .col > * { grid-area: auto; }
+}
+header { grid-area: head; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+h1 { font-size: 20px; margin: 0; font-weight: 650; }
+h1 small { display: block; font-size: 12px; font-weight: 400; color: var(--muted); }
+h2.sec { font-size: 12px; margin: 0; color: var(--muted); font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 12px; min-width: 0; }
+.row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+label.f { display: grid; gap: 4px; font-size: 11px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; min-width: 0; }
+input, select { font: 16px var(--sans); color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; width: 100%; min-width: 0; }
+input[type=datetime-local], input[type=time] { color-scheme: dark; }
+input:focus-visible, select:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 1px; }
+.hint { font-size: 12px; color: var(--faint); }
+.seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 2px; background: var(--panel2); border: 1px solid var(--line); border-radius: 9px; padding: 2px; }
+.seg button { font: 600 13px var(--sans); color: var(--muted); background: transparent; border: 0; border-radius: 7px; padding: 7px 8px; cursor: pointer; white-space: nowrap; }
+.seg button[aria-pressed="true"] { color: #111; background: var(--cyan); }
+.seg.inline { display: inline-grid; }
+button.go { font: 600 15px var(--sans); color: #111; background: var(--amber); border: 0; border-radius: 9px; padding: 11px 18px; cursor: pointer; width: 100%; }
+button.ghost { font: 13px var(--sans); color: var(--text); background: transparent; border: 1px solid var(--line); border-radius: 9px; padding: 7px 12px; cursor: pointer; white-space: nowrap; }
+button.ghost:hover, button.go:hover { filter: brightness(1.1); }
+.quick { display: flex; gap: 6px; flex-wrap: wrap; }
+.quick button { flex: 1 1 auto; }
+
+.kpis { grid-area: kpis; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 720px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.kpi { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; min-width: 0; }
+.kpi dt { font-size: 11px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+.kpi dd { margin: 2px 0 0; font: 600 24px var(--sans); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.kpi dd small { font-size: 13px; font-weight: 400; color: var(--muted); }
+.kpi p { margin: 2px 0 0; font-size: 12px; color: var(--muted); }
+.ok { color: var(--ok) !important; } .bad { color: var(--bad) !important; }
+
+.chartcard { grid-area: chart; }
+.chartbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.plot { position: relative; height: 340px; touch-action: pan-y; }
+@media (min-width: 1000px) { .plot { height: 400px; } }
+.plot canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: crosshair; }
+.tip { position: absolute; pointer-events: none; background: rgba(18,22,28,.96); border: 1px solid var(--line); border-radius: 8px;
+  padding: 7px 10px; font: 12px/1.5 var(--mono); white-space: nowrap; box-shadow: 0 6px 24px rgba(0,0,0,.5); z-index: 2; }
+.tip b { font-family: var(--sans); font-size: 12px; display: block; color: var(--text); margin-bottom: 2px; }
+.tip .dose { color: var(--amber); }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+.legend i { display: inline-block; width: 14px; height: 0; border-top: 2px solid; vertical-align: middle; margin-right: 5px; }
+
+.logcard { grid-area: log; }
+.dosecard { grid-area: doses; }
+.doses { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; max-height: 420px; overflow-y: auto; }
+.doses li { background: var(--panel2); padding: 8px 10px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; gap: 10px; align-items: center; font-size: 14px; }
+.doses li .when { font: 12px var(--mono); color: var(--muted); }
+.doses li .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.doses li .mg { font: 13px var(--mono); color: var(--amber); }
+.doses li button { all: unset; cursor: pointer; color: var(--faint); padding: 2px 6px; font-size: 16px; line-height: 1; }
+.doses li button:hover { color: var(--bad); }
+.doses li.future { opacity: .6; }
+.doses .empty { color: var(--faint); justify-content: center; display: block; text-align: center; }
+.dayhead { background: var(--panel) !important; font-size: 11px !important; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; padding: 5px 10px !important; display: flex !important; justify-content: space-between; }
+
+.forecast { grid-area: forecast; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { text-align: right; padding: 7px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th:first-child, td:first-child, th:last-child, td:last-child { text-align: left; }
+th { color: var(--muted); font-weight: 600; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; background: var(--panel); }
+tr:last-child td { border-bottom: 0; }
+tr.today td { background: rgba(124,199,217,.06); }
+.pill { font: 600 11px var(--sans); padding: 2px 8px; border-radius: 999px; }
+.pill.ok { background: rgba(127,212,154,.12); } .pill.bad { background: rgba(240,122,106,.14); }
+
+.profile { grid-area: profile; }
+.checks { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.chk { display: flex; gap: 7px; align-items: center; font-size: 14px; color: var(--text); cursor: pointer; }
+.chk input { width: 18px; height: 18px; margin: 0; accent-color: var(--cyan); }
+.subhead { font-size: 11px; color: var(--muted); letter-spacing: .05em; text-transform: uppercase; font-weight: 600; margin-top: 4px; }
+.seg.range button { padding: 7px 10px; }
+.stats { font: 12px var(--mono); color: var(--muted); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 12px; }
+.stats b { color: var(--text); font-weight: 500; }
+.cutoff { font-size: 13px; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+.cutoff b { color: var(--amber); }
+
+footer { grid-area: foot; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: space-between; font-size: 12px; color: var(--faint); }
+footer .btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 18px); transform: translateX(-50%); background: var(--panel2);
+  border: 1px solid var(--line); border-radius: 10px; padding: 9px 14px; font-size: 14px; display: flex; gap: 14px; align-items: center; z-index: 10; box-shadow: 0 8px 30px rgba(0,0,0,.6); }
+.toast button { all: unset; cursor: pointer; color: var(--cyan); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Caffeine Calculator<small>Two-compartment pharmacokinetics &amp; sleep impact</small></h1>
+    <div class="quick" style="flex:0 1 auto">
+      <select id="preset" aria-label="Load a preset schedule" style="width:auto">
+        <option value="">Load preset…</option>
+        <option value="week">7-day example week</option>
+        <option value="hawker">Singapore hawker week</option>
+        <option value="heavy">Heavy caffeine week</option>
+      </select>
+    </div>
+  </header>
+
+
+
+
+
+
+
+  <div class="col left">
+  <section class="card profile">
+    <h2 class="sec">Profile &amp; clearance</h2>
+    <div class="row">
+      <label class="f">Weight (kg)<input id="wt" type="number" inputmode="decimal" min="20" max="300" step="0.1"></label>
+      <label class="f">Height (cm)<input id="ht" type="number" inputmode="decimal" min="80" max="260" step="1"></label>
+    </div>
+    <div class="row">
+      <label class="f">Sex<div class="seg" id="sex" role="group"><button data-v="male">Male</button><button data-v="female">Female</button></div></label>
+      <label class="f">Bedtime<input id="bed" type="time" step="900"></label>
+    </div>
+    <div class="subhead">Things that speed up or slow down clearance</div>
+    <div class="row">
+      <label class="f">Genetics (CYP1A2)<select id="gene">
+        <option value="normal">Typical / don't know</option><option value="fast">Fast metabolizer</option><option value="slow">Slow metabolizer</option></select></label>
+      <label class="f">Hormones<select id="hormones">
+        <option value="none">None</option><option value="oc">Birth-control pill</option>
+        <option value="preg1">Pregnant · 1st trimester</option><option value="preg2">Pregnant · 2nd trimester</option><option value="preg3">Pregnant · 3rd trimester</option></select></label>
+    </div>
+    <div class="row">
+      <label class="f">Smoker<div class="seg" id="smoker" role="group"><button data-v="no">No</button><button data-v="yes">Yes</button></div></label>
+      <label class="f">Liver<select id="liver">
+        <option value="none">Healthy</option><option value="mild">Mild–moderate disease</option><option value="cirrhosis">Cirrhosis</option></select></label>
+    </div>
+    <div class="checks" id="meds">
+      <label class="chk"><input type="checkbox" value="fluvoxamine">Fluvoxamine (Luvox)</label>
+      <label class="chk"><input type="checkbox" value="ciprofloxacin">Ciprofloxacin</label>
+      <label class="chk"><input type="checkbox" value="cimetidine">Cimetidine</label>
+      <label class="chk"><input type="checkbox" value="alcohol">Alcohol today</label>
+    </div>
+    <div class="cutoff" id="clearDesc">&nbsp;</div>
+    <div class="subhead">Sleep sensitivity</div>
+    <div class="seg" id="sens" role="group"><button data-v="sensitive">Sensitive</button><button data-v="normal">Normal</button><button data-v="low">Low</button><button data-v="custom">Custom</button></div>
+    <label class="f" id="customWrap">Your sleep line (mg/L)<input id="customThr" type="number" inputmode="decimal" min="0.05" max="5" step="0.05"></label>
+    <div class="hint" id="sensDesc">&nbsp;</div>
+    <div class="stats" id="stats"></div>
+  </section>
+  <section class="card logcard">
+    <h2 class="sec">Log a dose</h2>
+    <label class="f">Drink<select id="bev"></select></label>
+    <div class="row">
+      <label class="f">Caffeine (mg)<input id="mg" type="number" inputmode="decimal" min="0" step="1"></label>
+      <label class="f">Absorption kₐ (/h)<input id="ka" type="number" inputmode="decimal" min="0.3" max="8" step="0.1"></label>
+    </div>
+    <div class="hint" id="bevDesc">&nbsp;</div>
+    <label class="f">When<input id="when" type="datetime-local"></label>
+    <div class="quick">
+      <button class="ghost" data-ago="0">Now</button><button class="ghost" data-ago="15">−15 min</button>
+      <button class="ghost" data-ago="30">−30 min</button><button class="ghost" data-ago="60">−1 h</button>
+      <button class="ghost" data-ago="1440">Yesterday</button>
+    </div>
+    <button class="go" id="add">Add dose</button>
+    <div class="cutoff" id="cutoff">&nbsp;</div>
+  </section>
+  <section class="card dosecard">
+    <div class="chartbar"><h2 class="sec" id="doseTitle">Doses</h2><button class="ghost" id="clearAll">Clear all</button></div>
+    <ul class="doses" id="doses"></ul>
+    <div class="hint">Doses up to 72 h before today still count — their leftover caffeine carries into today's curve.</div>
+  </section>
+  </div>
+  <div class="col right">
+  <section class="kpis" aria-label="Summary">
+    <dl class="kpi"><dt>Plasma now</dt><dd id="kNow">–</dd><p id="kNowSub">&nbsp;</p></dl>
+    <dl class="kpi"><dt>Today's peak</dt><dd id="kPeak">–</dd><p id="kPeakSub">&nbsp;</p></dl>
+    <dl class="kpi"><dt>At bedtime tonight</dt><dd id="kBed">–</dd><p id="kBedSub">&nbsp;</p></dl>
+    <dl class="kpi"><dt>Under your sleep line</dt><dd id="kSleep">–</dd><p id="kSleepSub">&nbsp;</p></dl>
+  </section>
+  <section class="card chartcard">
+    <div class="chartbar">
+      <h2 class="sec">Plasma concentration</h2>
+      <div class="seg inline range" id="range" role="group" aria-label="Chart range">
+        <button data-r="-3" title="Last 3 days and today">−3d</button><button data-r="-1" title="Yesterday and today">−1d</button><button data-r="1">Today</button><button data-r="3" title="Next 3 days">+3d</button><button data-r="7" title="Next 7 days">+7d</button>
+      </div>
+    </div>
+    <div class="hint" id="rangeLbl" style="margin-top:-6px">&nbsp;</div>
+    <div class="plot" id="plot"><canvas id="cv"></canvas><div class="tip" id="tip" hidden></div></div>
+    <div class="legend">
+      <span><i style="border-color:var(--cyan)"></i>Plasma C₁</span>
+      <span><i style="border-color:var(--violet);border-top-style:dashed"></i>Tissue C₂</span>
+      <span><i style="border-color:var(--ok);border-top-style:dotted"></i><span id="legThr">Your sleep line</span></span>
+      <span><i style="border-color:#2a3140;border-top-width:8px"></i>Sleep window</span>
+      <span><i style="border-color:var(--amber);border-top-style:dotted"></i>Now</span>
+    </div>
+  </section>
+  <section class="card forecast">
+    <h2 class="sec">7-night sleep forecast</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Night</th><th>Intake</th><th>At bedtime</th><th>Status</th><th>Under your line by</th></tr></thead>
+      <tbody id="fc"></tbody>
+    </table></div>
+    <div class="hint">For scale: across 24 studies, caffeine cost an average of 45 min of sleep, 7% sleep efficiency and 9 min longer to fall asleep, mostly
+      by cutting deep sleep. The same review advises a regular coffee at least 8.8 h before bed (Gardiner et al., <i>Sleep Medicine Reviews</i>, 2023).</div>
+  </section>
+  </div>
+  <footer>
+    <span id="saved">Saved on this device</span>
+    <div class="btns">
+      <button class="ghost" id="exportBtn">Export backup</button>
+      <button class="ghost" id="importBtn">Import backup</button>
+      <input type="file" id="importFile" accept="application/json,.json" hidden>
+    </div>
+  </footer>
+</div>
+<div class="toast" id="toast" hidden><span id="toastMsg"></span><button id="toastUndo">Undo</button></div>
+
+<script>
+"use strict";
+// ============================================================================
+// Reference data (ported from caffeine_data.py)
+// ============================================================================
+const BEVERAGES = {
+  pokka_jasmine_green_tea_500: ["Pokka Jasmine Green Tea (500 mL)", 25, 2.8, "Supermarket Bottled Tea", "Real-brewed green tea with jasmine (~25 mg per bottle)."],
+  fuze_tea_jasmine_500: ["Fuze Tea Jasmine (500 mL)", 28, 2.8, "Supermarket Bottled Tea", "Brewed green tea with natural jasmine (~28 mg)."],
+  pokka_milk_tea_500: ["Pokka Premium Milk Tea (500 mL)", 50, 2.2, "Supermarket Bottled Tea", "Ceylon black tea with whole milk (~50 mg)."],
+  pokka_ice_lemon_tea_500: ["Pokka Ice Lemon Tea (500 mL)", 36, 3.0, "Supermarket Bottled Tea", "Black tea with lemon (~36 mg)."],
+  fuze_tea_lemon_500: ["Fuze Tea Lemon Tea (500 mL)", 38, 3.0, "Supermarket Bottled Tea", "Iced black tea with lemon (~38 mg)."],
+  pokka_oolong_tea_500: ["Pokka Oolong Tea (500 mL)", 40, 3.0, "Supermarket Bottled Tea", "Semi-fermented oolong (~40 mg)."],
+  pokka_houjicha_500: ["Pokka Houjicha (500 mL)", 18, 2.6, "Supermarket Bottled Tea", "Roasted bancha, low caffeine (~18 mg)."],
+  yeos_chrysanthemum_tea: ["Yeo's Chrysanthemum Tea", 0, 1.0, "Supermarket Bottled Tea", "Caffeine-free herbal infusion (0 mg)."],
+  pokka_milk_coffee_can_240: ["Pokka Milk Coffee (240 mL can)", 55, 2.2, "Supermarket Canned Coffee", "Classic canned milk coffee (~55 mg)."],
+  pokka_milk_coffee_bottle_500: ["Pokka Milk Coffee (500 mL bottle)", 110, 2.2, "Supermarket Canned Coffee", "500 mL bottle (~110 mg)."],
+  nescafe_can_original_240: ["Nescafé Original Can (240 mL)", 75, 2.3, "Supermarket Canned Coffee", "Robusta/Arabica with milk & sugar (~75 mg)."],
+  nescafe_can_latte_240: ["Nescafé Latte / Mocha Can (240 mL)", 68, 2.1, "Supermarket Canned Coffee", "Canned milk coffee (~68 mg)."],
+  boss_coffee_black_185: ["Suntory BOSS Black (185–240 mL)", 140, 3.8, "Supermarket Canned Coffee", "Flash-brewed black coffee (~140 mg)."],
+  boss_coffee_rainbow_185: ["Suntory BOSS Rainbow Mountain / Café au Lait", 110, 2.3, "Supermarket Canned Coffee", "With dairy milk (~110 mg)."],
+  wonda_coffee_extra_240: ["Wonda Extra Presso (240 mL)", 105, 2.4, "Supermarket Canned Coffee", "Deep-roast canned coffee (~105 mg)."],
+  starbucks_bottled_frappuccino: ["Starbucks Bottled Frappuccino (281 mL)", 95, 2.0, "Supermarket Canned Coffee", "Arabica extract with milk (~95 mg)."],
+  coca_cola_can_320: ["Coca-Cola Classic / Zero (320 mL)", 32, 3.8, "Carbonated Soft Drink", "Cola (~32 mg per can)."],
+  instant_3in1_regular: ["3-in-1 Instant (Super / Nescafé)", 55, 2.4, "Instant Coffee", "20 g sachet with creamer & sugar (~55 mg)."],
+  instant_2in1_nosugar: ["2-in-1 Instant (No Sugar)", 65, 2.6, "Instant Coffee", "12 g sachet without sugar (~65 mg)."],
+  instant_white_coffee_3in1: ["Ipoh White Coffee 3-in-1 (38 g)", 115, 2.0, "Instant Coffee", "Dense dark-roast sachet (~115 mg)."],
+  instant_kopi_o_bag: ["Instant Kopi O Bag (Owl / Gold Kili)", 120, 3.5, "Instant Coffee", "Hainanese Robusta filter bag (~120 mg)."],
+  instant_teh_tarik_3in1: ["3-in-1 Teh Tarik Sachet", 50, 2.2, "Instant Tea", "Instant milk tea (~50 mg)."],
+  kopi_o: ["Kopi O (Robusta, black)", 160, 3.5, "Singapore Kopitiam", "Traditional Hainanese roast (~160 mg)."],
+  kopi: ["Kopi (condensed milk)", 150, 2.0, "Singapore Kopitiam", "Robusta with condensed milk (~150 mg)."],
+  kopi_c: ["Kopi C (evaporated milk)", 140, 2.4, "Singapore Kopitiam", "Robusta with evaporated milk (~140 mg)."],
+  teh: ["Teh (condensed milk)", 55, 2.2, "Singapore Kopitiam", "Pulled Ceylon tea with condensed milk (~55 mg)."],
+  teh_o: ["Teh O (black tea)", 60, 3.2, "Singapore Kopitiam", "Black tea without dairy (~60 mg)."],
+  espresso_single: ["Single Espresso (30 mL)", 65, 4.0, "Café Espresso", "One shot (~65 mg)."],
+  espresso_double: ["Double Espresso / Americano", 130, 3.8, "Café Espresso", "Two shots or long black (~130 mg)."],
+  latte_single: ["Café Latte (single shot)", 65, 2.0, "Café Espresso", "One shot with steamed milk (~65 mg)."],
+  latte_double: ["Café Latte / Flat White (double)", 130, 2.0, "Café Espresso", "Two shots with milk (~130 mg)."],
+  cold_brew: ["Cold Brew (250 mL)", 200, 3.5, "Café Specialty", "Long immersion steep (~200 mg)."],
+  filter_drip: ["Drip Filter Coffee (350 mL)", 160, 3.6, "Café Specialty", "Pour-over / batch brew (~160 mg)."],
+  matcha: ["Matcha (2 g)", 60, 2.6, "Tea & Herbal", "Stone-ground leaf with L-theanine (~60 mg)."],
+  energy_drink: ["Energy Drink (250 mL)", 80, 4.0, "Energy Drink", "Taurine & caffeine (~80 mg)."],
+};
+// Clearance multipliers (1 = typical adult; <1 = slower clearance, longer half-life). They multiply together.
+// Sources: fluvoxamine -80% (Jeppesen 1996); pill 6.2 -> 10.7 h half-life (about x0.58); smoking +50-70%;
+// pregnancy reaching ~15 h by the 3rd trimester. Genetics, liver, ciprofloxacin, cimetidine and alcohol are
+// rounded central estimates from the general literature: treat them as approximate.
+const CLEARANCE = {
+  gene: { normal: 1, fast: 1.4, slow: 0.7 },
+  hormones: { none: 1, oc: 0.58, preg1: 0.8, preg2: 0.5, preg3: 0.33 },
+  liver: { none: 1, mild: 0.5, cirrhosis: 0.25 },
+  smoker: 1.6,
+  meds: { fluvoxamine: 0.2, ciprofloxacin: 0.6, cimetidine: 0.7, alcohol: 0.75 },
+};
+const clearanceMult = p => (CLEARANCE.gene[p.gene] ?? 1) * (CLEARANCE.hormones[p.hormones] ?? 1) * (CLEARANCE.liver[p.liver] ?? 1)
+  * (p.smoker ? CLEARANCE.smoker : 1) * (p.meds || []).reduce((m, k) => m * (CLEARANCE.meds[k] ?? 1), 1);
+
+// Bedtime plasma level above which sleep is likely affected. Normal is anchored to the Gardiner 2023 advice
+// (107 mg >= 8.8 h before bed and 217 mg >= 13.2 h both leave ~0.8-0.9 mg/L in this model); Sensitive to
+// Landolt 1995 (200 mg at 07:10 still disturbed sleep; ~0.56 mg/L at 23:00 here); Low is a guess.
+const SENS = {
+  sensitive: [0.4, "For light sleepers, older adults or people who rarely drink caffeine. Based on a study where one 200 mg morning coffee still disturbed sleep that night (Landolt 1995)."],
+  normal: [0.8, "Matches a 2023 review of 24 studies: a regular coffee at least 8.8 h before bed (Gardiner et al.)."],
+  low: [1.2, "For daily heavy coffee drinkers who sleep fine anyway. A rough estimate, not from a study."],
+  custom: [null, "Set your own line. Lower it if late coffee keeps you up; raise it if it never does."],
+};
+const threshold = p => p.sens === "custom" ? (p.customThr > 0 ? p.customThr : 0.8) : SENS[p.sens]?.[0] ?? 0.8;
+
+// ============================================================================
+// Pharmacokinetic engine (ported from caffeine_pk_calculator.py)
+// ============================================================================
+const H = 3600000, DT = 0.02, WARMUP_H = 72, BACK_H = 72;  // BACK_H: how far back the chart can show
+
+const devineIBW = (h, sex) => (sex === "male" ? 50 : 45.5) + 2.3 * Math.max(0, h / 2.54 - 60);
+const boerLBW = (w, h, sex) => sex === "male" ? Math.max(20, 0.407 * w + 0.267 * h - 19.2)
+                                              : Math.max(15, 0.252 * w + 0.473 * h - 48.3);
+
+// Volumes and clearance scale off lean body weight, so weight, height AND sex all matter.
+function pkConstants(p) {
+  const lbw = boerLBW(p.weight, p.height, p.sex), ibw = devineIBW(p.height, p.sex);
+  const v1 = 0.38 * lbw, v2 = 0.27 * lbw, q = 0.45 * lbw;
+  const mult = clearanceMult(p), cl = 0.095 * lbw * mult;
+  const k10 = cl / v1, k12 = q / v1, k21 = q / v2;
+  const b = k10 + k12 + k21, disc = Math.max(0, b * b - 4 * k10 * k21);
+  const beta = 0.5 * (b - Math.sqrt(disc));
+  return { lbw, ibw, v1, v2, q, cl, mult, k10, k12, k21, f: 0.99, halfLife: beta > 0 ? Math.LN2 / beta : 0,
+           bmi: p.weight / (p.height / 100) ** 2 };
+}
+
+// One RK4 step of the two-compartment model with a gut pool per dose.
+function rk4(t, q1, q2, gut, tDose, ka, pk) {
+  const n = gut.length, { k10, k12, k21 } = pk;
+  const deriv = (tt, a1, a2, g, dg) => {
+    let input = 0;
+    for (let i = 0; i < n; i++) {
+      if (g[i] > 1e-6 && tt >= tDose[i]) { const r = ka[i] * g[i]; input += r; dg[i] = -r; } else dg[i] = 0;
+    }
+    return [input - (k10 + k12) * a1 + k21 * a2, k12 * a1 - k21 * a2];
+  };
+  const g1 = new Float64Array(n), g2 = new Float64Array(n), g3 = new Float64Array(n), g4 = new Float64Array(n), tmp = new Float64Array(n);
+  const [a1, b1] = deriv(t, q1, q2, gut, g1);
+  for (let i = 0; i < n; i++) tmp[i] = gut[i] + 0.5 * DT * g1[i];
+  const [a2, b2] = deriv(t + 0.5 * DT, q1 + 0.5 * DT * a1, q2 + 0.5 * DT * b1, tmp, g2);
+  for (let i = 0; i < n; i++) tmp[i] = gut[i] + 0.5 * DT * g2[i];
+  const [a3, b3] = deriv(t + 0.5 * DT, q1 + 0.5 * DT * a2, q2 + 0.5 * DT * b2, tmp, g3);
+  for (let i = 0; i < n; i++) tmp[i] = gut[i] + DT * g3[i];
+  const [a4, b4] = deriv(t + DT, q1 + DT * a3, q2 + DT * b3, tmp, g4);
+  for (let i = 0; i < n; i++) gut[i] = Math.max(0, gut[i] + DT / 6 * (g1[i] + 2 * g2[i] + 2 * g3[i] + g4[i]));
+  return [Math.max(0, q1 + DT / 6 * (a1 + 2 * a2 + 2 * a3 + a4)), Math.max(0, q2 + DT / 6 * (b1 + 2 * b2 + 2 * b3 + b4))];
+}
+
+// Integrates doses over [startMs, startMs + hours). Returns per-step arrays when record=true.
+function integrate(doses, startMs, hours, pk, q1, q2, record) {
+  const n = doses.length, steps = Math.ceil(hours / DT);
+  const tDose = Float64Array.from(doses, d => (d.ts - startMs) / H);
+  const ka = Float64Array.from(doses, d => d.ka || 3);
+  const mg = Float64Array.from(doses, d => d.mg * pk.f);
+  const gut = new Float64Array(n), given = new Uint8Array(n);
+  const out = record ? { c1: new Float64Array(steps + 1), c2: new Float64Array(steps + 1), body: new Float64Array(steps + 1) } : null;
+  for (let s = 0; s <= steps; s++) {
+    const t = s * DT;
+    for (let i = 0; i < n; i++) if (!given[i] && t >= tDose[i]) { gut[i] += mg[i]; given[i] = 1; }
+    if (record) { out.c1[s] = q1 / pk.v1; out.c2[s] = q2 / pk.v2; out.body[s] = q1 + q2; }
+    if (s < steps) [q1, q2] = rk4(t, q1, q2, gut, tDose, ka, pk);
+  }
+  return record ? out : [q1, q2];
+}
+
+const dayStart = ms => { const d = new Date(ms); d.setHours(0, 0, 0, 0); return d.getTime(); };
+const addDays = (ms, n) => { const d = new Date(ms); d.setDate(d.getDate() + n); return d.getTime(); };
+
+// Bedtimes before noon are treated as "after midnight" (i.e. the next calendar day).
+function bedtimeFor(dayMs, p) {
+  const [h, m] = p.bedtime.split(":").map(Number);
+  const d = new Date(h < 12 ? addDays(dayMs, 1) : dayMs); d.setHours(h, m || 0, 0, 0); return d.getTime();
+}
+
+function simulate(p, doses, days = 7) {
+  const pk = pkConstants(p), thr = threshold(p);
+  const today = dayStart(Date.now()), start = today - BACK_H * H;
+  const sorted = [...doses].sort((a, b) => a.ts - b.ts);
+  // The recorded timeline starts BACK_H before today so past days can be charted. Doses in the
+  // WARMUP_H before that are integrated first so their leftover caffeine seeds the curve instead
+  // of being replayed as a fresh dose at the chart start.
+  const warm = sorted.filter(d => d.ts < start && d.ts >= start - WARMUP_H * H);
+  const rec = sorted.filter(d => d.ts >= start);
+  let q0 = [0, 0];
+  if (warm.length) q0 = integrate(warm, start - WARMUP_H * H, WARMUP_H, pk, 0, 0, false);
+  const tl = integrate(rec, start, BACK_H + days * 24 + 12, pk, q0[0], q0[1], true);  // +12 h fits the last night
+  tl.start = start; tl.today = today; tl.n = tl.c1.length;
+  const idx = ms => Math.min(tl.n - 1, Math.max(0, Math.round((ms - start) / H / DT)));
+  const at = ms => tl.c1[idx(ms)];
+  const firstBelow = fromI => { for (let i = fromI; i < tl.n; i++) if (tl.c1[i] < thr) return start + i * DT * H; return null; };
+
+  const now = Date.now(), nowI = idx(now);
+  let peak = 0, peakI = idx(today);
+  for (let i = idx(today), e = idx(addDays(today, 1)); i < e; i++) if (tl.c1[i] > peak) { peak = tl.c1[i]; peakI = i; }
+
+  const nights = [];
+  for (let d = 0; d < days; d++) {
+    const day = addDays(today, d), bed = bedtimeFor(day, p), c = at(bed);
+    const intake = sorted.filter(x => x.ts >= day && x.ts < addDays(day, 1)).reduce((s, x) => s + x.mg, 0);
+    nights.push({ day, bed, c, intake, disrupted: c >= thr, clears: c >= thr ? firstBelow(idx(bed)) : null });
+  }
+  return { pk, thr, tl, rec, idx, q0, nowI, now: tl.c1[nowI], nowBody: tl.body[nowI], peak, peakMs: start + peakI * DT * H,
+           nights, clearsFromNow: tl.c1[nowI] >= thr ? firstBelow(nowI) : null };
+}
+
+// Plasma level at `atMs` if one extra dose were added. Starts from the same seeded state as `sim`.
+function levelWithExtra(s, extra, atMs) {
+  const doses = [...s.rec, extra].sort((a, b) => a.ts - b.ts);
+  const [q1] = integrate(doses, s.tl.start, (atMs - s.tl.start) / H, s.pk, s.q0[0], s.q0[1], false);
+  return q1 / s.pk.v1;
+}
+
+// Latest time from now that a dose of mg/ka keeps the next bedtime under the user's line.
+function lastCup(s, mg, ka) {
+  const now = Date.now(), night = s.nights.find(n => n.bed > now + H);
+  if (!night) return { kind: "none" };
+  if (night.c >= s.thr) return { kind: "already", night };
+  const f = t => levelWithExtra(s, { ts: t, mg, ka }, night.bed);
+  // Later doses leave more at bedtime until the last ~1.5 h, when they haven't been absorbed yet,
+  // so only search up to then.
+  let lo = now, hi = night.bed - 1.5 * H;
+  if (hi <= lo || f(lo) > s.thr) return { kind: "late", night };
+  if (f(hi) <= s.thr) return { kind: "any", night, t: hi };
+  for (let k = 0; k < 14; k++) { const mid = (lo + hi) / 2; if (f(mid) <= s.thr) lo = mid; else hi = mid; }
+  return { kind: "by", night, t: Math.floor(lo / 300000) * 300000 };
+}
+
+// ============================================================================
+// State & persistence
+// ============================================================================
+const KEY = "caffeine-calc-v1";
+const DEFAULT = { profile: { weight: 75, height: 170, sex: "male", bedtime: "23:00", gene: "normal", hormones: "none", liver: "none",
+                             smoker: false, meds: [], sens: "normal", customThr: 0.8 }, doses: [], range: 1 };
+let state = load();
+function load() {
+  try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && s.profile && Array.isArray(s.doses)) return normalize(s); }
+  catch (e) {}
+  return structuredClone(DEFAULT);
+}
+// Fills in new fields and maps the old single "CYP1A2" dropdown onto the separate factors.
+function normalize(s) {
+  const prof = { ...DEFAULT.profile, ...s.profile };
+  if (prof.cyp) {
+    if (prof.cyp === "fast" || prof.cyp === "slow") prof.gene = prof.cyp;
+    if (prof.cyp === "smoker") prof.smoker = true;
+    if (prof.cyp === "oral_contraceptives") prof.hormones = "oc";
+    delete prof.cyp;
+  }
+  if (!Array.isArray(prof.meds)) prof.meds = [];
+  return { ...DEFAULT, ...s, profile: prof };
+}
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(state)); $("saved").textContent = "Saved on this device · " + fmtTime(Date.now()); }
+  catch (e) { $("saved").textContent = "Could not save (storage unavailable)"; }
+}
+
+function preset(kind) {
+  const base = dayStart(Date.now()), out = [];
+  const add = (day, hh, mm, key, mgOverride) => {
+    const b = BEVERAGES[key]; out.push({ id: uid(), ts: addDays(base, day) + (hh * 60 + mm) * 60000, name: b[0], mg: mgOverride ?? b[1], ka: b[2] });
+  };
+  if (kind === "hawker") { for (let d = 0; d < 5; d++) { add(d, 7, 45, "kopi_o"); add(d, 13, 15, "kopi_c"); } add(5, 9, 30, "kopi"); add(6, 10, 0, "teh_o"); }
+  else if (kind === "heavy") { for (let d = 0; d < 5; d++) { add(d, 7, 0, "cold_brew"); add(d, 12, 30, "espresso_double"); add(d, 17, 0, "energy_drink"); } }
+  else {
+    add(0, 7, 30, "espresso_double"); add(0, 13, 30, "kopi_c"); add(1, 8, 0, "kopi_o"); add(1, 16, 30, "cold_brew");
+    add(2, 7, 45, "latte_double"); add(2, 14, 0, "matcha", 45); add(3, 9, 15, "kopi"); add(3, 11, 30, "teh"); add(3, 15, 0, "energy_drink");
+    add(4, 8, 30, "espresso_double"); add(4, 12, 45, "kopi_o"); add(6, 10, 30, "latte_double");
+  }
+  return out;
+}
+
+// ============================================================================
+// Helpers
+// ============================================================================
+const $ = id => document.getElementById(id);
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+const fmtTime = ms => new Date(ms).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+const fmtDay = ms => new Date(ms).toLocaleDateString([], { weekday: "short", month: "short", day: "numeric" });
+const fmtWeekday = ms => new Date(ms).toLocaleDateString([], { weekday: "short" });
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const toLocalInput = ms => { const d = new Date(ms - new Date(ms).getTimezoneOffset() * 60000); return d.toISOString().slice(0, 16); };
+const niceCeil = v => { const step = v <= 2 ? 0.25 : v <= 5 ? 0.5 : v <= 10 ? 1 : v <= 20 ? 2 : 5; return Math.ceil(v / step) * step; };
+
+// ============================================================================
+// Rendering
+// ============================================================================
+let sim = null;
+function recompute() { sim = simulate(state.profile, state.doses); renderAll(); }
+
+function renderAll() {
+  renderKPIs(); renderProfileStats(); renderDoses(); renderForecast(); drawChart();
+}
+
+function renderKPIs() {
+  const n0 = sim.nights[0], thr = sim.thr;
+  $("kNow").innerHTML = `${sim.now.toFixed(2)} <small>mg/L</small>`;
+  $("kNow").className = sim.now >= thr ? "bad" : "";
+  $("kNowSub").textContent = `${sim.nowBody.toFixed(0)} mg in body`;
+  $("kPeak").innerHTML = `${sim.peak.toFixed(2)} <small>mg/L</small>`;
+  $("kPeakSub").textContent = sim.peak > 0.005 ? `at ${fmtTime(sim.peakMs)}` : "no caffeine today";
+  $("kBed").innerHTML = `${n0.c.toFixed(2)} <small>mg/L</small>`;
+  $("kBedSub").textContent = (n0.disrupted ? `Above your ${thr.toFixed(2)} line` : "Under your line") + ` · ${fmtTime(n0.bed)}`;
+  $("kBedSub").className = n0.disrupted ? "bad" : "ok";
+  if (sim.now < thr) {
+    $("kSleep").innerHTML = "Now"; $("kSleep").className = "ok";
+    $("kSleepSub").textContent = `below ${thr.toFixed(2)} mg/L`;
+  } else if (sim.clearsFromNow) {
+    const mins = Math.round((sim.clearsFromNow - Date.now()) / 60000);
+    $("kSleep").innerHTML = fmtTime(sim.clearsFromNow); $("kSleep").className = "";
+    $("kSleepSub").textContent = `in ${Math.floor(mins / 60)} h ${mins % 60} min`
+      + (dayStart(sim.clearsFromNow) !== dayStart(Date.now()) ? ` (${fmtWeekday(sim.clearsFromNow)})` : "");
+  } else { $("kSleep").innerHTML = "> 36 h"; $("kSleep").className = "bad"; $("kSleepSub").textContent = "well above your line"; }
+}
+
+function renderProfileStats() {
+  const pk = sim.pk, p = state.profile;
+  const typical = pkConstants({ ...p, gene: "normal", hormones: "none", liver: "none", smoker: false, meds: [] });
+  $("clearDesc").innerHTML = pk.mult === 1
+    ? `Half-life <b>${pk.halfLife.toFixed(1)} h</b> (typical adult)`
+    : `Clearance ×${pk.mult.toFixed(2)} → half-life <b>${pk.halfLife.toFixed(1)} h</b> (typical ${typical.halfLife.toFixed(1)} h)`;
+  $("stats").innerHTML = [
+    ["Lean mass", pk.lbw.toFixed(1) + " kg"], ["Ideal wt", pk.ibw.toFixed(1) + " kg"], ["V₁", pk.v1.toFixed(1) + " L"],
+    ["Clearance", pk.cl.toFixed(2) + " L/h"], ["BMI", pk.bmi.toFixed(1)], ["Sleep line", sim.thr.toFixed(2) + " mg/L"],
+  ].map(([k, v]) => `<span>${k} <b>${v}</b></span>`).join("");
+  $("sensDesc").textContent = (SENS[p.sens] || SENS.normal)[1];
+  $("customWrap").hidden = p.sens !== "custom";
+  $("legThr").textContent = `Your sleep line ${sim.thr.toFixed(2)} mg/L`;
+  renderLastCup();
+}
+
+function renderLastCup() {
+  const mg = parseFloat($("mg").value), ka = parseFloat($("ka").value) || 3;
+  if (!(mg > 0)) { $("cutoff").innerHTML = "Enter an amount to see the latest time you could have it tonight."; return; }
+  const r = lastCup(sim, mg, ka), what = `${mg.toFixed(0)} mg`;
+  const bed = r.night ? `${fmtWeekday(r.night.bed)} ${fmtTime(r.night.bed)}` : "";
+  $("cutoff").innerHTML =
+      r.kind === "by" ? `Latest for ${what} and still under your line at bedtime (${bed}): <b>${fmtTime(r.t)}</b>`
+    : r.kind === "any" ? `${what} stays under your line even late — fine up to about <b>${fmtTime(r.t)}</b> before bed (${bed}).`
+    : r.kind === "late" ? `<span class="bad">Too late for ${what} tonight</span> — it would leave you over your line at ${bed}.`
+    : r.kind === "already" ? `<span class="bad">You're already over your line at bedtime</span> (${bed}) without another drink.`
+    : "";
+}
+
+function renderDoses() {
+  const list = [...state.doses].sort((a, b) => b.ts - a.ts), now = Date.now();
+  $("doseTitle").textContent = `Doses (${list.length})`;
+  if (!list.length) { $("doses").innerHTML = `<li class="empty">No doses logged yet</li>`; return; }
+  let html = "", lastDay = null;
+  for (const d of list) {
+    const day = dayStart(d.ts);
+    if (day !== lastDay) {
+      const total = list.filter(x => dayStart(x.ts) === day).reduce((s, x) => s + x.mg, 0);
+      html += `<li class="dayhead"><span>${fmtDay(day)}</span><span>${total.toFixed(0)} mg</span></li>`; lastDay = day;
+    }
+    html += `<li class="${d.ts > now ? "future" : ""}"><span class="when">${fmtTime(d.ts)}</span><span class="name" title="${esc(d.name)}">${esc(d.name)}</span>`
+          + `<span class="mg">${d.mg.toFixed(0)} mg</span><button aria-label="Delete ${esc(d.name)}" data-del="${d.id}">✕</button></li>`;
+  }
+  $("doses").innerHTML = html;
+}
+
+function renderForecast() {
+  $("fc").innerHTML = sim.nights.map((n, i) => `<tr class="${i === 0 ? "today" : ""}">
+    <td>${fmtDay(n.day)}</td><td>${n.intake.toFixed(0)} mg</td><td>${n.c.toFixed(2)} mg/L</td>
+    <td><span class="pill ${n.disrupted ? "bad" : "ok"}">${n.disrupted ? "Over" : "Under"}</span></td>
+    <td>${n.disrupted ? (n.clears ? fmtWeekday(n.clears) + " " + fmtTime(n.clears) : "> 36 h") : "Already under"}</td></tr>`).join("");
+}
+
+// ---- Chart ------------------------------------------------------------------
+const cv = $("cv"), ctx = cv.getContext("2d");
+let geom = null, hoverI = null;
+
+function drawChart() {
+  const box = $("plot").getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+  if (!box.width) return;
+  cv.width = Math.round(box.width * dpr); cv.height = Math.round(box.height * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const W = box.width, Hh = box.height, padL = 42, padR = 10, padT = 10, padB = 26;
+  const tl = sim.tl, r = state.range, THR = sim.thr;
+  const winStart = r < 0 ? addDays(tl.today, r) : tl.today, winEnd = r < 0 ? addDays(tl.today, 1) : addDays(tl.today, r);
+  const i0 = sim.idx(winStart), i1 = sim.idx(winEnd), spanDays = Math.round((winEnd - winStart) / 864e5);
+  $("rangeLbl").textContent = spanDays === 1 ? fmtDay(winStart) : `${fmtDay(winStart)} – ${fmtDay(winEnd - 1)}`;
+  let ymax = THR;
+  for (let i = i0; i <= i1; i++) ymax = Math.max(ymax, tl.c1[i], tl.c2[i]);
+  ymax = niceCeil(ymax * 1.15);
+  const x = i => padL + (i - i0) / (i1 - i0) * (W - padL - padR);
+  const y = v => padT + (1 - v / ymax) * (Hh - padT - padB);
+  geom = { i0, i1, x, y, padL, padR, W, Hh, padT, padB };
+
+  ctx.clearRect(0, 0, W, Hh);
+  ctx.font = "11px " + getComputedStyle(document.body).fontFamily;
+
+  // sleep windows (bedtime → +8 h)
+  ctx.fillStyle = "rgba(42,49,64,.55)";
+  for (let d = -1; d <= spanDays; d++) {
+    const b = bedtimeFor(addDays(winStart, d), state.profile);
+    const a = (b - tl.start) / H / DT, e = a + 8 / DT;
+    const xa = Math.max(padL, x(Math.max(i0, a))), xe = Math.min(W - padR, x(Math.min(i1, e)));
+    if (xe > xa) ctx.fillRect(xa, padT, xe - xa, Hh - padT - padB);
+  }
+
+  // grid + y labels
+  const ystep = ymax <= 2 ? 0.25 : ymax <= 5 ? 0.5 : ymax <= 10 ? 1 : ymax <= 20 ? 2 : 5;
+  ctx.strokeStyle = "#1c222b"; ctx.fillStyle = "#8b96a5"; ctx.lineWidth = 1; ctx.textAlign = "right"; ctx.textBaseline = "middle";
+  for (let v = 0; v <= ymax + 1e-9; v += ystep) {
+    const yy = Math.round(y(v)) + .5; ctx.beginPath(); ctx.moveTo(padL, yy); ctx.lineTo(W - padR, yy); ctx.stroke();
+    ctx.fillText(v.toFixed(ystep < 1 ? 2 : 0), padL - 6, yy);
+  }
+  // x labels: tick spacing by span; day names at midnight, hours in between
+  ctx.textAlign = "center"; ctx.textBaseline = "top";
+  const tickH = spanDays <= 1 ? 3 : spanDays <= 2 ? 6 : spanDays <= 4 ? 12 : 24;
+  for (let t = winStart; t <= winEnd; t += tickH * H) {
+    const tt = new Date(t), midnight = tt.getHours() === 0;
+    const xx = Math.round(x((t - tl.start) / H / DT)) + .5;
+    ctx.strokeStyle = midnight ? "#2a323e" : "#1c222b"; ctx.beginPath(); ctx.moveTo(xx, padT); ctx.lineTo(xx, Hh - padB); ctx.stroke();
+    if (spanDays >= 7) { if (t < winEnd) ctx.fillText(fmtWeekday(t), Math.min(W - padR - 12, xx + (x(24 / DT) - x(0)) / 2), Hh - padB + 6); }
+    else ctx.fillText(midnight && spanDays > 1 ? fmtWeekday(t) : tt.toLocaleTimeString([], { hour: "numeric" }), xx, Hh - padB + 6);
+  }
+
+  // threshold
+  ctx.setLineDash([2, 4]); ctx.strokeStyle = "#7fd49a"; ctx.lineWidth = 1.4;
+  ctx.beginPath(); ctx.moveTo(padL, y(THR)); ctx.lineTo(W - padR, y(THR)); ctx.stroke(); ctx.setLineDash([]);
+
+  // curves (decimated to ~2 points per pixel)
+  const stride = Math.max(1, Math.floor((i1 - i0) / ((W - padL - padR) * 2)));
+  const path = arr => { ctx.beginPath(); for (let i = i0; i <= i1; i += stride) i === i0 ? ctx.moveTo(x(i), y(arr[i])) : ctx.lineTo(x(i), y(arr[i])); ctx.lineTo(x(i1), y(arr[i1])); };
+  path(tl.c1); ctx.lineTo(x(i1), y(0)); ctx.lineTo(x(i0), y(0)); ctx.closePath();
+  const grad = ctx.createLinearGradient(0, padT, 0, Hh - padB); grad.addColorStop(0, "rgba(124,199,217,.28)"); grad.addColorStop(1, "rgba(124,199,217,.02)");
+  ctx.fillStyle = grad; ctx.fill();
+  ctx.setLineDash([4, 3]); ctx.strokeStyle = "#a99ae0"; ctx.lineWidth = 1.2; path(tl.c2); ctx.stroke(); ctx.setLineDash([]);
+  ctx.strokeStyle = "#7cc7d9"; ctx.lineWidth = 2.2; ctx.lineJoin = "round"; path(tl.c1); ctx.stroke();
+
+  // doses
+  for (const d of sim.rec) {
+    const i = Math.round((d.ts - tl.start) / H / DT); if (i < i0 || i > i1) continue;
+    ctx.fillStyle = "#f2b24c"; ctx.strokeStyle = "#0a0c10"; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(x(i), y(tl.c1[i]), 4, 0, 7); ctx.fill(); ctx.stroke();
+  }
+  // now
+  if (sim.nowI >= i0 && sim.nowI <= i1) {
+    const xx = Math.round(x(sim.nowI)) + .5; ctx.setLineDash([2, 3]); ctx.strokeStyle = "#f2b24c"; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(xx, padT); ctx.lineTo(xx, Hh - padB); ctx.stroke(); ctx.setLineDash([]);
+  }
+  // hover crosshair
+  if (hoverI != null && hoverI >= i0 && hoverI <= i1) {
+    const xx = x(hoverI); ctx.strokeStyle = "rgba(214,220,228,.5)"; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(xx, padT); ctx.lineTo(xx, Hh - padB); ctx.stroke();
+    for (const [arr, col] of [[tl.c2, "#a99ae0"], [tl.c1, "#7cc7d9"]]) {
+      ctx.fillStyle = col; ctx.strokeStyle = "#0a0c10"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(xx, y(arr[hoverI]), 4.5, 0, 7); ctx.fill(); ctx.stroke();
+    }
+  }
+}
+
+function showTip(clientX) {
+  if (!geom) return;
+  const r = cv.getBoundingClientRect(), px = clientX - r.left, { i0, i1, padL, padR, W } = geom;
+  if (px < padL - 4 || px > W - padR + 4) return hideTip();
+  hoverI = Math.round(i0 + Math.min(1, Math.max(0, (px - padL) / (W - padL - padR))) * (i1 - i0));
+  const tl = sim.tl, t = tl.start + hoverI * DT * H;
+  const near = sim.rec.filter(d => Math.abs(d.ts - t) <= Math.max(DT * H, (i1 - i0) * DT * H / (W - padL - padR) * 4));
+  const tip = $("tip");
+  tip.innerHTML = `<b>${fmtDay(t)} · ${fmtTime(t)}</b>Plasma C₁  <span style="color:${tl.c1[hoverI] >= sim.thr ? "var(--bad)" : "var(--ok)"}">${tl.c1[hoverI].toFixed(2)} mg/L</span><br>`
+    + `Tissue C₂  ${tl.c2[hoverI].toFixed(2)} mg/L<br>Body total ${tl.body[hoverI].toFixed(0)} mg`
+    + near.map(d => `<div class="dose">+${d.mg.toFixed(0)} mg ${esc(d.name)}</div>`).join("");
+  tip.hidden = false;
+  const tw = tip.offsetWidth, xx = geom.x(hoverI);
+  tip.style.left = (xx + 14 + tw > W ? xx - 14 - tw : xx + 14) + "px";
+  tip.style.top = Math.max(4, Math.min(geom.Hh - tip.offsetHeight - 30, geom.y(tl.c1[hoverI]) - tip.offsetHeight - 10)) + "px";
+  drawChart();
+}
+function hideTip() { if (hoverI == null) return; hoverI = null; $("tip").hidden = true; drawChart(); }
+cv.addEventListener("pointermove", e => showTip(e.clientX));
+cv.addEventListener("pointerdown", e => showTip(e.clientX));
+cv.addEventListener("pointerleave", e => { if (e.pointerType === "mouse") hideTip(); });
+document.addEventListener("pointerdown", e => { if (e.target !== cv) hideTip(); });
+new ResizeObserver(() => sim && drawChart()).observe($("plot"));
+
+// ============================================================================
+// Inputs
+// ============================================================================
+function setPressed(groupId, attr, val) { for (const b of $(groupId).querySelectorAll("button")) b.setAttribute("aria-pressed", String(b.dataset[attr] === String(val))); }
+
+function initInputs() {
+  // drink picker grouped by category
+  const cats = {};
+  for (const [k, b] of Object.entries(BEVERAGES)) (cats[b[3]] ||= []).push(k);
+  $("bev").innerHTML = `<option value="custom">Custom amount…</option>` + Object.entries(cats).map(([c, keys]) =>
+    `<optgroup label="${esc(c)}">${keys.map(k => `<option value="${k}">${esc(BEVERAGES[k][0])} — ${BEVERAGES[k][1]} mg</option>`).join("")}</optgroup>`).join("");
+  $("bev").value = state.lastBev && (BEVERAGES[state.lastBev] || state.lastBev === "custom") ? state.lastBev : "espresso_double";
+  const syncBev = () => {
+    const b = BEVERAGES[$("bev").value];
+    if (b) { $("mg").value = b[1]; $("ka").value = b[2]; $("bevDesc").textContent = b[4]; }
+    else { $("mg").value = ""; $("ka").value = 3; $("bevDesc").textContent = "Enter any caffeine amount. kₐ 3/h is typical; lower for milky or food-taken drinks."; }
+  };
+  $("bev").addEventListener("change", () => { syncBev(); sim && renderLastCup(); }); syncBev();
+  for (const id of ["mg", "ka"]) $(id).addEventListener("input", () => sim && renderLastCup());
+
+  $("when").value = toLocalInput(Date.now());
+  for (const b of document.querySelectorAll("[data-ago]"))
+    b.addEventListener("click", () => { $("when").value = toLocalInput(Date.now() - Number(b.dataset.ago) * 60000); });
+
+  $("add").addEventListener("click", () => {
+    const mg = parseFloat($("mg").value), ka = parseFloat($("ka").value), ts = new Date($("when").value).getTime();
+    if (!(mg >= 0)) return toast("Enter a caffeine amount in mg");
+    if (!Number.isFinite(ts)) return toast("Pick a date and time");
+    const b = BEVERAGES[$("bev").value];
+    state.doses.push({ id: uid(), ts, mg, ka: ka > 0 ? ka : 3, name: b ? b[0] : `Custom (${mg.toFixed(0)} mg)` });
+    state.lastBev = $("bev").value;
+    save(); recompute(); toast(`Added ${mg.toFixed(0)} mg at ${fmtDay(ts)} ${fmtTime(ts)}`);
+    $("when").value = toLocalInput(Date.now());
+  });
+
+  $("doses").addEventListener("click", e => {
+    const id = e.target.dataset && e.target.dataset.del; if (!id) return;
+    const i = state.doses.findIndex(d => d.id === id); if (i < 0) return;
+    const [removed] = state.doses.splice(i, 1); save(); recompute();
+    toast(`Removed ${removed.name}`, () => { state.doses.push(removed); save(); recompute(); });
+  });
+  $("clearAll").addEventListener("click", () => {
+    if (!state.doses.length) return;
+    const before = state.doses; state.doses = []; save(); recompute();
+    toast(`Cleared ${before.length} doses`, () => { state.doses = before; save(); recompute(); });
+  });
+  $("preset").addEventListener("change", () => {
+    const k = $("preset").value; $("preset").value = ""; if (!k) return;
+    const before = state.doses; state.doses = preset(k); save(); recompute();
+    toast("Loaded preset", () => { state.doses = before; save(); recompute(); });
+  });
+
+  // profile
+  const p = state.profile;
+  $("wt").value = p.weight; $("ht").value = p.height; $("bed").value = p.bedtime;
+  setPressed("sex", "v", p.sex);
+  for (const id of ["gene", "hormones", "liver"]) {
+    $(id).value = p[id];
+    $(id).addEventListener("change", () => { state.profile[id] = $(id).value; save(); recompute(); });
+  }
+  setPressed("smoker", "v", p.smoker ? "yes" : "no");
+  $("smoker").addEventListener("click", e => { const v = e.target.dataset.v; if (!v) return; state.profile.smoker = v === "yes"; setPressed("smoker", "v", v); save(); recompute(); });
+  for (const cb of $("meds").querySelectorAll("input")) {
+    cb.checked = p.meds.includes(cb.value);
+    cb.addEventListener("change", () => { state.profile.meds = [...$("meds").querySelectorAll("input:checked")].map(c => c.value); save(); recompute(); });
+  }
+  setPressed("sens", "v", p.sens); $("customThr").value = p.customThr;
+  $("sens").addEventListener("click", e => { const v = e.target.dataset.v; if (!v) return; state.profile.sens = v; setPressed("sens", "v", v); save(); recompute(); });
+  $("customThr").addEventListener("change", () => {
+    const v = parseFloat($("customThr").value);
+    if (v > 0) state.profile.customThr = Math.min(5, Math.max(0.05, v));
+    $("customThr").value = state.profile.customThr; save(); recompute();
+  });
+  const num = (id, key, lo, hi) => {
+    // Save on every keystroke (so closing the app mid-edit keeps it); recompute and tidy the box on commit.
+    $(id).addEventListener("input", () => {
+      const v = parseFloat($(id).value);
+      if (Number.isFinite(v) && v >= lo && v <= hi) { state.profile[key] = v; save(); }
+    });
+    $(id).addEventListener("change", () => {
+      const v = parseFloat($(id).value);
+      if (Number.isFinite(v)) state.profile[key] = Math.min(hi, Math.max(lo, v));
+      $(id).value = state.profile[key]; save(); recompute();
+    });
+  };
+  num("wt", "weight", 20, 300); num("ht", "height", 80, 260);
+  $("bed").addEventListener("change", () => { if ($("bed").value) { state.profile.bedtime = $("bed").value; save(); recompute(); } });
+  $("sex").addEventListener("click", e => { const v = e.target.dataset.v; if (!v) return; state.profile.sex = v; setPressed("sex", "v", v); save(); recompute(); });
+
+  setPressed("range", "r", state.range);
+  $("range").addEventListener("click", e => { const r = Number(e.target.dataset.r); if (!r) return; state.range = r; setPressed("range", "r", r); hideTip(); save(); drawChart(); });
+
+  // backup
+  $("exportBtn").addEventListener("click", () => {
+    const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+    a.download = `caffeine-backup-${new Date().toISOString().slice(0, 10)}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  });
+  $("importBtn").addEventListener("click", () => $("importFile").click());
+  $("importFile").addEventListener("change", async () => {
+    const f = $("importFile").files[0]; if (!f) return;
+    try {
+      const s = JSON.parse(await f.text());
+      if (!s.profile || !Array.isArray(s.doses)) throw new Error("not a backup");
+      state = normalize(s); save(); location.reload();
+    } catch (e) { toast("That file isn't a Caffeine Calculator backup"); }
+    $("importFile").value = "";
+  });
+}
+
+let toastTimer;
+function toast(msg, undo) {
+  $("toastMsg").textContent = msg; $("toastUndo").hidden = !undo; $("toast").hidden = false;
+  $("toastUndo").onclick = () => { $("toast").hidden = true; undo && undo(); };
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => { $("toast").hidden = true; }, undo ? 6000 : 2500);
+}
+
+// Keep "now" current if the app stays open (and roll over at midnight).
+let lastDay = dayStart(Date.now());
+setInterval(() => { if (dayStart(Date.now()) !== lastDay) lastDay = dayStart(Date.now()); recompute(); }, 60000);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) recompute(); });
+
+initInputs();
+recompute();
+</script>
+<script>
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () {});
+if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(function () {});
+</script>
+</body>
+</html>
