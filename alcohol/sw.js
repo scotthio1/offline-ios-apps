@@ -1,5 +1,5 @@
-// Alcohol PK offline cache (version changes whenever the page changes; the build replaces 433271a641)
-const CACHE = 'alcohol-pk-433271a641';
+// Alcohol PK offline cache (version changes whenever the page changes; the build replaces 2fec23c1c8)
+const CACHE = 'alcohol-pk-2fec23c1c8';
 const FILES = ["./", "index.html", "manifest.webmanifest", "icon-180.png", "icon-192.png", "icon-512.png"];
 const OFFLINE = '<!doctype html><meta name="viewport" content="width=device-width, initial-scale=1"><title>Alcohol PK & Sleep Calculator</title>'
   + '<body style="background:#0a0c10;color:#d8dde6;font:17px -apple-system,system-ui,sans-serif;padding:80px 24px;line-height:1.45">'
